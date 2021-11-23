@@ -35,11 +35,19 @@ module holes(){
         hole();
     }
 }
-
-linear_extrude(2){
-    difference() {
-        pi_zero_body();
-        holes();
+module raspberry_pi_zero(){
+    translate([corner_radius, corner_radius, 0]) {
+        color("green") {
+            linear_extrude(2){
+                difference() {
+                    pi_zero_body();
+                    holes();
+                    
+                }
+            }
+        }
         
     }
+    
 }
+raspberry_pi_zero();
